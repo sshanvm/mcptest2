@@ -1,0 +1,8 @@
+{
+  "name": "sample-mcp-security",
+  "version": "0.1.0",
+  "description": "Sample MCP server exposing security-related tools for audit testing",
+  "runtime": "node",
+  "entrypoint": "server.ts",
+  "tools": true
+}
