@@ -1,0 +1,9 @@
+{
+  "name": "direct-risky-mcp",
+  "version": "1.0.0",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "zod": "^3.22.0",
+    "node-fetch": "^3.3.2"
+  }
+}
