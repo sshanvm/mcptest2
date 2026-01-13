@@ -1,0 +1,6 @@
+{
+  "name": "mcp-audit-risky",
+  "version": "1.0.0",
+  "entrypoint": "direct-risky/server.ts",
+  "runtime": "node"
+}
