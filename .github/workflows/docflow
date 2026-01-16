@@ -1,0 +1,25 @@
+name: MCP Scan
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  mcp-scan:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Run MCP_Scanner via Docker
+      run: |
+        docker run --rm -v ${{ github.workspace }}:/workspace \
+          ghcr.io/beejak/mcp-sentinel:2.6.0 \
+          scan /workspace --output sarif --output-file /workspace/mcp-scan.sarif
+
+    - name: Upload SARIF report to GitHub
+      uses: github/codeql-action/upload-sarif@v2
+      with:
+        sarif_file: mcp-scan.sarif
